@@ -10,7 +10,7 @@ The architecture strictly separates map logic from visual representation, allowi
 
 | 2D UI Map Example | 3D World Map Example |
 | --- | --- |
-| (Link to GIF/Image) | (Link to GIF/Image) |
+| <video src="https://github.com/user-attachments/assets/c6d0bbfe-f129-4335-8c28-c2c0fa1b42ba" autoplay loop muted playsinline></video> | <video src="https://github.com/user-attachments/assets/96c27a3c-c9bb-4f67-85c1-d07624109bbc" autoplay loop muted playsinline></video> |
 
 ## 🚀 Features
 - Customizable Grid: Define exact horizontal rows (levels) and nodes per level.
@@ -35,7 +35,7 @@ First, the system determines the boundaries of the map container. It then genera
 With the points laid out, the path generator takes over:
 - Starting Nodes: It randomly selects guaranteed unique starting points for the bottom level, then fulfills the remaining quota of _totalPaths.
 - Traversing Upward: It evaluates valid children on the next level up. To prevent visual mess, it enforces a CanOverlapPath rule—paths are not allowed to cross each other (e.g., node 1 going to node 3 while node 2 goes to node 0).
-- Culling: Any node that wasn't connected to a path is destroyed and removed from the grid to keep the map clean.
+- Culling: Any node that wasn't connected to a path is destroyed and removed from the grid.
 
 ### 3. Procedural Rule Assignment (MapNodeTypeAssigner)
 Nodes are assigned their gameplay identities (e.g., Shop, Elite, Rest) based on a list of NodeTypeRulesSO:
